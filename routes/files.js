@@ -2,6 +2,10 @@ const express = require('express')
 const router = express.Router()
 const uploadFile = require('../middleware/uploadFile')
 
+router.get('/', async(req, res) => {
+    res.send("Coba")
+})
+
 router.post('/upload-file', uploadFile.single('file'), async (req, res) => {
     const exfile = req.file
     try{
