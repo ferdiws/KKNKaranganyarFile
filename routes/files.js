@@ -18,4 +18,18 @@ router.post('/upload-file', uploadFile.single('file'), async (req, res) => {
     }
 })
 
+router.get("/", async (req, res) => {
+    try{
+        res.json({
+            status: 200,
+            message:"Success"
+        })
+    } catch (err) {
+        res.status(500).json({
+            status: 'fail',
+            message: err
+        })
+    }
+})
+
 module.exports = router
